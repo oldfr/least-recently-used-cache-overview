@@ -5,7 +5,6 @@ import java.util.Objects;
 public class StudentCacheData {
 
     private String dataKey;
-//    private LocalDateTime timestamp;
     private String dataDetails;
 
     public StudentCacheData(String dataKey, String dataDetails) {
