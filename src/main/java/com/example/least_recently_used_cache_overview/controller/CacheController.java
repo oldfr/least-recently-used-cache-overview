@@ -22,6 +22,7 @@ public class CacheController {
         return dataService.addData(dataKey, dataDetail);
     }
 
+    // can be used when we want to clear the cache after certain time period
     @GetMapping("/deleteData")
     public String deleteData(@RequestParam String data) {
 
