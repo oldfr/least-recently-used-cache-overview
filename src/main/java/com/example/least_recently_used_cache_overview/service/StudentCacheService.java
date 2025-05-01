@@ -29,7 +29,7 @@ public class StudentCacheService {
     private static void addData(StudentCacheData studentCacheData) {
         // if CAPACITY is reached remove element from beginning
         if(cacheData.size() == CAPACITY) {
-            System.out.println("cache is full. So removing data");
+            System.out.println("cache is full to add data:"+ studentCacheData.getDataKey()+". So removing data");
             System.out.println("before removing, data:"+cacheData);
             cacheData.remove(0);
             System.out.println("after removing, data:"+cacheData);
@@ -58,10 +58,10 @@ public class StudentCacheService {
         }
         // if present, remove existing and add in end
         StudentCacheData studentCacheData = cacheData.stream().filter(m -> m.getDataKey().equals(dataKey)).findAny().get();
-        System.out.println("removed existing data:"+cacheData);
         cacheData.remove(studentCacheData);
+        System.out.println("marking existing data:"+studentCacheData.getDataKey() +" as recently used");
         cacheData.add(studentCacheData);
-        System.out.println("added data:"+cacheData);
+        System.out.println("cache data :"+cacheData);
 
         return studentCacheData.getDataDetails();
     }

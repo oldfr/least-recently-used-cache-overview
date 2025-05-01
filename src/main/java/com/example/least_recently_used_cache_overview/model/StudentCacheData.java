@@ -44,6 +44,7 @@ public class StudentCacheData {
     public String toString() {
         return "StudentCacheData{" +
                 "dataKey='" + dataKey + '\'' +
+                ", dataDetails='" + dataDetails + '\'' +
                 '}';
     }
 }
